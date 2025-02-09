@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-import markdownify  # pip install markdownify
+import markdownify
 
 def create_markdown_from_webpage(url, output_filename="output.md"):
     """
@@ -12,20 +12,18 @@ def create_markdown_from_webpage(url, output_filename="output.md"):
     """
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
+        response.raise_for_status()
     except requests.exceptions.RequestException as e:
         print(f"Error fetching the webpage: {e}")
         return
 
     soup = BeautifulSoup(response.content, 'html.parser')
 
-    # --- Specific to Medium.com (inspect the page source for best selectors) ---
-    # This is the most crucial part:  Finding the right HTML elements
-    # Medium articles are typically within a <div class="e eJ"> or similar structure. Inspect the page!
-    article_content = soup.find('div', class_='e eJ')  # Or a more specific class if you find one
-
+    # --- Specific to brittonbroderick.com ---
+    # Find the main article element.  We'll use the 'article' tag.
+    article_content = soup.find('article')  # This is the important change
     if not article_content:
-        print("Could not find article content.  Check your selectors!")
+        print("Could not find article content. Check your selectors!")
         return
 
     # Convert HTML to Markdown
@@ -33,12 +31,12 @@ def create_markdown_from_webpage(url, output_filename="output.md"):
 
     # Save to a Markdown file
     try:
-        with open(output_filename, "w", encoding="utf-8") as f:  # Specify encoding!
+        with open(output_filename, "w", encoding="utf-8") as f:
             f.write(markdown_text)
         print(f"Markdown file created: {output_filename}")
     except IOError as e:
         print(f"Error writing to file: {e}")
 
 # Example usage:
-url = "https://medium.com/@rrpinc/priorities-of-a-great-engineering-leader-9bba11bd005d"
-create_markdown_from_webpage(url, "engineering_leadership.md")
+url = "https://brittonbroderick.com/2024/08/18/building-aggressively-helpful-teams/"
+create_markdown_from_webpage(url, "aggressively_helpful_teams.md")
