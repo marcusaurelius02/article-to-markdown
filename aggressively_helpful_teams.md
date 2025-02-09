@@ -86,8 +86,3 @@ And then you get to experience the almost magical benefits of pairing in your or
 This was described to me as a trick that made our team feel **aggressively helpful**, by one of it's members, a very welcome change compared to previous organizations.
 
 So hopefully you can steal this trick and build aggressively helpful teams too.
-
-If you've got any other tricks you use to build aggressively helpful teams, I'd love to hear about them! Fediverse (@brittonjb@hachyderm.io), or via email (brittonbroderick@gmail.com).
-
-
-
