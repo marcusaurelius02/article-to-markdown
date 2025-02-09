@@ -44,4 +44,5 @@ def create_markdown_from_webpage(url, output_filename="output.md"):
 url ="https://newsletter.getdx.com/p/developer-use-case-with-ai-tools"
 url = "https://lauratacho.com/blog/dumb-leadership-mistakes-ive-made"
 url = "https://sdtimes.com/softwaredev/dirty-code-still-runs-but-thats-not-a-good-thing/"
-create_markdown_from_webpage(url, "dirty-code-not-good-thing.md")
+url = "https://perell.com/friday-finds-links/"
+create_markdown_from_webpage(url, "david-perell-friday-finds.md")
