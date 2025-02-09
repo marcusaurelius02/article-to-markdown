@@ -38,5 +38,10 @@ def create_markdown_from_webpage(url, output_filename="output.md"):
         print(f"Error writing to file: {e}")
 
 # Example usage:
-url = "https://brittonbroderick.com/2024/08/18/building-aggressively-helpful-teams/"
-create_markdown_from_webpage(url, "aggressively_helpful_teams.md")
+# Used https://www.linkedin.com/posts/kachchani_this-is-your-shortcut-to-better-tech-leadership-activity-7278035916646932480-HnWq/?utm_source=share&utm_medium=member_ios
+#url = "https://brittonbroderick.com/2024/08/18/building-aggressively-helpful-teams/"
+#url ="https://stackoverflow.blog/2024/12/31/generative-ai-is-not-going-to-build-your-engineering-team-for-you/"
+url ="https://newsletter.getdx.com/p/developer-use-case-with-ai-tools"
+url = "https://lauratacho.com/blog/dumb-leadership-mistakes-ive-made"
+url = "https://sdtimes.com/softwaredev/dirty-code-still-runs-but-thats-not-a-good-thing/"
+create_markdown_from_webpage(url, "dirty-code-not-good-thing.md")
